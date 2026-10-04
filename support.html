@@ -35,6 +35,34 @@ nav.foot{display:flex;gap:8px 22px;flex-wrap:wrap;margin-top:44px;padding-top:20
 .card p{color:var(--txt);margin:0}
 .card p+p{margin-top:10px}
 .todo{background:var(--orange);color:var(--ink);padding:0 6px;border-radius:6px;font-weight:700}
+#contact{scroll-margin-top:16px}
+.form{padding:20px}
+.form fieldset{border:0;margin:0 0 18px;padding:0;min-width:0}
+.form legend,.form label.lbl{display:block;font-weight:800;color:var(--txt);font-size:16px;margin:0 0 8px;padding:0}
+.form .hint{font-size:14px;color:var(--mut);margin:6px 0 0}
+.topics{display:flex;flex-wrap:wrap;gap:8px}
+.topics input{position:absolute;opacity:0;width:1px;height:1px}
+.topics label{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:var(--raised2);border:1px solid var(--line);color:var(--txt);font-weight:700;font-size:15px;cursor:pointer}
+.topics input:checked+label{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.topics input:focus-visible+label{outline:3px solid var(--teal);outline-offset:3px}
+.form textarea,.form input[type=email]{width:100%;font:inherit;font-size:16px;color:var(--txt);background:var(--raised2);border:1.5px solid var(--line);border-radius:16px;padding:12px 14px}
+.form textarea{min-height:160px;resize:vertical;line-height:1.5}
+.form textarea:focus,.form input[type=email]:focus{outline:3px solid var(--orange);outline-offset:2px;border-color:var(--orange)}
+.form [aria-invalid=true]{border-color:#FF8A7A}
+.count{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--mut);margin-top:6px}
+.count output.over{color:#FF8A7A;font-weight:700}
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:17px;background:var(--orange);color:var(--ink);padding:14px 28px;border-radius:999px;min-height:48px;width:100%}
+@media(min-width:560px){.btn{width:auto;min-width:200px}}
+.btn:hover{filter:brightness(1.06)}
+.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.btn[disabled]{opacity:.55;cursor:progress}
+.msg{margin:14px 0 0;padding:12px 14px;border-radius:14px;font-size:15.5px}
+.msg.err{background:rgba(255,138,122,.12);border:1px solid #FF8A7A;color:#FFC2B8}
+.msg.ok{background:rgba(46,230,214,.1);border:1px solid var(--teal);color:var(--txt)}
+.msg.ok b{display:block;font-size:19px;margin-bottom:4px}
+.msg:focus{outline:3px solid var(--orange);outline-offset:3px}
+[hidden]{display:none!important}
 .hero{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:28px 0 4px}
 .hero .icon{width:112px;height:112px;border-radius:26px;box-shadow:0 0 0 1px var(--line),0 12px 40px rgba(255,106,61,.28),0 0 60px rgba(46,230,214,.14)}
 .hero h1 span{background:linear-gradient(90deg,var(--teal),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -65,7 +93,7 @@ th{color:var(--txt);font-weight:700}
 
 <h1>Earshot support</h1>
 <p class="lead">Help with catching sounds, your account and Earshot+.</p>
-<div class="card"><p>Questions, data requests or reports: <span class="todo">[support email]</span></p></div>
+<div class="card"><p>Questions, data requests or reports: <a href="#contact">send us a message</a>. You can also do it in the app: Me &gt; Settings &gt; Contact us.</p></div>
 
 <h2>Catching</h2>
 <details><summary>How does catching work?</summary><p>Tap Listen and Earshot listens for up to 30 seconds. When it is confident it hears a particular sound, that sound becomes catchable and a ring shrinks onto a target circle. Tap Catch as the ring lines up to earn more stars: three stars for a near-perfect tap, two for a good one, one otherwise.</p><p>Each catch becomes a card with a rarity (Common to Legendary), XP and a clip of the sound. A clear three-star catch has a 1 in 8 chance of being shiny. You can catch more than one sound in a session. If a sound fades before you tap, it slips away and you can try again.</p></details>
@@ -76,7 +104,7 @@ th{color:var(--txt);font-weight:700}
 <h2>Clips, location and privacy</h2>
 <details><summary>Where are my clips and what happens to the audio?</summary><p>Audio is analysed on your phone and never leaves it. When you catch something, Earshot keeps a roughly 5-second clip on your phone so you can replay it on the card. Free players keep the best clip for each sound; Earshot+ keeps every clip in the Clip Vault. Clips are excluded from device backups and are never uploaded.</p></details>
 <details><summary>Does Earshot use my location?</summary><p>Only if you allow it, and only to pin a catch on your Sound Map. Location is read at the moment you catch a sound and stored on your phone only. You can change this any time in Settings &gt; Privacy &amp; Security &gt; Location Services &gt; Earshot.</p></details>
-<details><summary>What does Earshot store on a server?</summary><p>Nothing, unless you sign in with Apple to use friends and the league. Then we store your handle, display name, avatar, stats and catch metadata (sound, rarity, stars, shiny, XP, time), plus friendships, blocks, division membership and claps. See the <a href="privacy.html">privacy policy</a> for the full list.</p></details>
+<details><summary>What does Earshot store on a server?</summary><p>Nothing, unless you sign in with Apple to use friends and the league, or send us a message with the contact form. If you sign in, we store your handle, display name, avatar, stats and catch metadata (sound, rarity, stars, shiny, XP, time), plus friendships, blocks, division membership and claps. A contact message is stored with its topic, your optional reply email, the app version and your device model. See the <a href="privacy.html">privacy policy</a> for the full list.</p></details>
 
 <h2>Friends and League</h2>
 <details><summary>How do I add friends?</summary><p>Open the League tab and sign in with Apple. Pick a handle, then add friends by handle or by scanning each other's QR code or invite link. The weekly league ranks you and your friends by XP earned since Monday at midnight Pacific time.</p></details>
@@ -84,15 +112,119 @@ th{color:var(--txt);font-weight:700}
 
 <h2>Earshot+ and purchases</h2>
 <details><summary>What does Earshot+ include, and how do I cancel?</summary><p>The core game is free. Earshot+ adds extra daily bounties and a reroll, a larger streak freeze allowance, card frame themes, the full Sound Map, the Clip Vault and deep stats. It comes as a monthly or annual subscription, or a one-time lifetime purchase. Manage or cancel a subscription any time in Settings &gt; your name &gt; Subscriptions on your iPhone; you keep Earshot+ until the end of the period you paid for. Deleting the app does not cancel a subscription.</p></details>
-<details><summary>How do I restore purchases?</summary><p>Open the Earshot+ screen (from Me, or by tapping any Earshot+ feature) and choose Restore Purchases. Make sure you're signed in to the same Apple Account you used to buy. If it still doesn't show, email us with your Apple receipt.</p></details>
+<details><summary>How do I restore purchases?</summary><p>Open the Earshot+ screen (from Me, or by tapping any Earshot+ feature) and choose Restore Purchases. Make sure you're signed in to the same Apple Account you used to buy. If it still doesn't show, <a href="#contact">send us a message</a> with your Apple receipt details.</p></details>
 <details><summary>I was charged but don't have Earshot+</summary><p>Try Restore Purchases first. Refund requests are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p></details>
 
 <h2>Your data</h2>
-<details><summary>How do I delete my Earshot account data?</summary><p>Open the League tab, tap your avatar to open the account menu and choose Delete Earshot account data. Your profile, catches, friendships, blocks, division membership and claps on our server are deleted immediately and permanently. Your catches and clips on your phone are untouched; to remove those use Me &gt; Reset or delete the app. The shared sign-in record (your Apple account ID) can be erased on request: email us.</p></details>
+<details><summary>How do I delete my Earshot account data?</summary><p>Open the League tab, tap your avatar to open the account menu and choose Delete Earshot account data. Your profile, catches, friendships, blocks, division membership and claps on our server are deleted immediately and permanently. Your catches and clips on your phone are untouched; to remove those use Me &gt; Reset or delete the app. The shared sign-in record (your Apple account ID) can be erased on request: <a href="#contact">send us a message</a>.</p></details>
 <details><summary>I'm not getting reminders</summary><p>Allow notifications when Earshot asks, or turn them on in Settings &gt; Notifications &gt; Earshot. Reminders are scheduled on your phone, so they work without an account.</p></details>
 
-<h2>Contact</h2>
-<div class="card"><p>Questions, data requests or reports: <span class="todo">[support email]</span></p><p>Please include your iPhone model, iOS version and what you were hearing or doing. Never send passwords.</p></div>
+<h2 id="contact">Contact us</h2>
+<p>Questions, ideas, bugs, purchases or data requests: send us a message. We read every one. Please include your iPhone model, iOS version and what you were hearing or doing. Never send passwords.</p>
+<div class="card form">
+<form id="contact-form" action="#" method="post" novalidate>
+<fieldset>
+<legend>Topic</legend>
+<div class="topics">
+<input type="radio" name="topic" id="t-help" value="help" checked><label for="t-help">Help</label>
+<input type="radio" name="topic" id="t-bug" value="bug"><label for="t-bug">Bug</label>
+<input type="radio" name="topic" id="t-idea" value="idea"><label for="t-idea">Idea</label>
+<input type="radio" name="topic" id="t-account" value="account"><label for="t-account">Account</label>
+<input type="radio" name="topic" id="t-purchase" value="purchase"><label for="t-purchase">Purchase</label>
+<input type="radio" name="topic" id="t-privacy" value="privacy"><label for="t-privacy">Privacy</label>
+<input type="radio" name="topic" id="t-report" value="report"><label for="t-report">Report someone</label>
+<input type="radio" name="topic" id="t-other" value="other"><label for="t-other">Other</label>
+</div>
+</fieldset>
+<div style="margin-bottom:18px">
+<label class="lbl" for="message">Message</label>
+<textarea id="message" name="message" rows="6" aria-describedby="count" required></textarea>
+<div class="count"><span id="count-label">Between 5 and 4000 characters.</span><span id="count"><output id="count-n" for="message">0</output> / 4000</span></div>
+</div>
+<div style="margin-bottom:18px">
+<label class="lbl" for="email">Email for a reply (optional)</label>
+<input type="email" id="email" name="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" aria-describedby="email-hint">
+<p class="hint" id="email-hint">Only used to answer this message. Leave it blank if you don't need a reply.</p>
+</div>
+<div class="hp" aria-hidden="true"><label for="website">Leave this field empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<button type="submit" class="btn" id="send">Send message</button>
+<div id="form-error" class="msg err" role="alert" tabindex="-1" hidden></div>
+<noscript><p class="msg err">The contact form needs JavaScript. You can also reach us in the app: Me &gt; Settings &gt; Contact us.</p></noscript>
+</form>
+<div id="form-ok" class="msg ok" role="status" tabindex="-1" hidden><b>Thanks! We read every message.</b><span id="ok-detail"></span></div>
+</div>
+<script>
+(function () {
+  var ENDPOINT = 'https://oqyteqixrtobhncfpcyx.supabase.co/rest/v1/rpc/submit_support_message';
+  var KEY = 'sb_publishable_qrOJIaUs52pmVl8lvZ-Yxg_fFR2LHHQ';
+  var f = document.getElementById('contact-form'), msg = document.getElementById('message'),
+      em = document.getElementById('email'), btn = document.getElementById('send'),
+      err = document.getElementById('form-error'), ok = document.getElementById('form-ok'),
+      okd = document.getElementById('ok-detail'), cn = document.getElementById('count-n');
+  var busy = false;
+  function len() { return Array.from(msg.value.trim()).length; }
+  function updateCount() { var n = len(); cn.textContent = n; cn.className = n > 4000 ? 'over' : ''; }
+  msg.addEventListener('input', updateCount);
+  function validEmail(v) { return v.length <= 254 && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); }
+  var TEXT = {
+    message_too_short: 'Add a little more detail (at least 5 characters).',
+    message_too_long: 'That is a bit long. Please keep it under 4000 characters.',
+    invalid_email: 'That email address does not look right. Fix it, or clear it to send without one.',
+    busy: 'We are getting a lot of messages right now. Please try again in a little while.',
+    too_many: 'You have sent a few messages already. Please wait a bit before sending another.',
+    offline: 'We could not reach the server. Check your connection and try again.',
+    other: 'We could not send that. Please try again in a moment.'
+  };
+  function fail(code, field) {
+    msg.removeAttribute('aria-invalid'); em.removeAttribute('aria-invalid');
+    err.textContent = TEXT[code] || TEXT.other; err.hidden = false;
+    if (field) { field.setAttribute('aria-invalid', 'true'); field.focus(); } else { err.focus(); }
+  }
+  function codeFrom(body) {
+    var t = String((body && (body.message || body.hint || body.details)) || '').toLowerCase();
+    var keys = ['message_too_short', 'message_too_long', 'invalid_email', 'too_many', 'busy'];
+    for (var i = 0; i < keys.length; i++) { if (t.indexOf(keys[i]) > -1) return keys[i]; }
+    return 'other';
+  }
+  function showOk(mail) {
+    okd.textContent = mail
+      ? 'If your message needs an answer, we will reply to the address you gave us.'
+      : 'You did not leave an email, so we cannot write back, but we will use what you told us to make Earshot better.';
+    f.hidden = true; ok.hidden = false; ok.focus();
+  }
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (busy) return;
+    err.hidden = true;
+    var m = msg.value.trim(), mail = em.value.trim(), n = len();
+    if (n < 5) return fail('message_too_short', msg);
+    if (n > 4000) return fail('message_too_long', msg);
+    if (mail && !validEmail(mail)) return fail('invalid_email', em);
+    // Honeypot: real people never see this field, so a filled one means a bot. Pretend it worked, send nothing.
+    if (document.getElementById('website').value) { showOk(mail); return; }
+    busy = true; btn.disabled = true; btn.textContent = 'Sending...';
+    var ctl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = ctl ? setTimeout(function () { ctl.abort(); }, 20000) : null;
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'apikey': KEY, 'Content-Profile': 'earshot', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ p_topic: f.elements.topic.value || 'other', p_message: m, p_reply_email: mail || null, p_source: 'web' }),
+      signal: ctl ? ctl.signal : undefined
+    }).then(function (r) {
+      if (r.ok) { showOk(mail); return; }
+      return r.json().catch(function () { return null; }).then(function (b) {
+        var c = codeFrom(b);
+        fail(c, c === 'message_too_short' || c === 'message_too_long' ? msg : c === 'invalid_email' ? em : null);
+      });
+    }).catch(function () {
+      fail('offline');
+    }).then(function () {
+      if (timer) clearTimeout(timer);
+      busy = false; btn.disabled = false; btn.textContent = 'Send message';
+    });
+  });
+})();
+</script>
 
 <nav class="foot" aria-label="Footer"><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms &amp; community rules</a></nav>
 </main></body></html>
